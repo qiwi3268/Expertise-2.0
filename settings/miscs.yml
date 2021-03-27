@@ -1,0 +1,144 @@
+# Одиночные справочники
+single_miscs:
+  - &expertiseForm
+    alias: 'expertiseForm'
+    class: 'App\Models\Miscs\MiscExpertiseForm'
+  - &expertisePurpose
+    alias: 'expertisePurpose'
+    class: 'App\Models\Miscs\MiscExpertisePurpose'
+  - &oksGroup
+    alias: 'oksGroup'
+    class: 'App\Models\Miscs\MiscOksGroup'
+  - &oksTypeOfObject
+    alias: 'oksTypeOfObject'
+    class: 'App\Models\Miscs\MiscOksTypeOfObject'
+  - &typeOfObject
+    alias: 'typeOfObject'
+    class: 'App\Models\Miscs\MiscTypeOfObject'
+  - &typeOfWork
+    alias: 'typeOfWork'
+    class: 'App\Models\Miscs\MiscTypeOfWork'
+  - &culturalObjectType
+    alias: 'culturalObjectType'
+    class: 'App\Models\Miscs\MiscCulturalObjectType'
+  - &nationalProjectName
+    alias: 'nationalProjectName'
+    class: 'App\Models\Miscs\MiscNationalProjectName'
+  - &nationalProjectSector
+    alias: 'nationalProjectSector'
+    class: 'App\Models\Miscs\MiscNationalProjectSector'
+  - &nationalProjectSubsector
+    alias: 'nationalProjectSubsector'
+    class: 'App\Models\Miscs\MiscNationalProjectSubsector'
+  - &nationalProjectGroup
+    alias: 'nationalProjectGroup'
+    class: 'App\Models\Miscs\MiscNationalProjectGroup'
+  - &federalProjectName
+    alias: 'federalProjectName'
+    class: 'App\Models\Miscs\MiscFederalProjectName'
+  - &curator
+    alias: 'curator'
+    class: 'App\Models\Miscs\MiscCurator'
+  - &windRegion
+    alias: 'windRegion'
+    class: 'App\Models\Miscs\MiscWindRegion'
+  - &snowRegion
+    alias: 'snowRegion'
+    class: 'App\Models\Miscs\MiscSnowRegion'
+  - &seismicIntensity
+    alias: 'seismicIntensity'
+    class: 'App\Models\Miscs\MiscSeismicIntensity'
+  - &climaticRegionAndSubRegion
+    alias: 'climaticRegionAndSubRegion'
+    class: 'App\Models\Miscs\MiscClimaticRegionAndSubRegion'
+  - &engineeringGeologicalCondition
+    alias: 'engineeringGeologicalCondition'
+    class: 'App\Models\Miscs\MiscEngineeringGeologicalCondition'
+  - &functionalPurpose
+    alias: 'functionalPurpose'
+    class: 'App\Models\Miscs\MiscFunctionalPurpose'
+  - &budgetLevel
+    alias: 'budgetLevel'
+    class: 'App\Models\Miscs\MiscBudgetLevel'
+  - &commentCriticality
+    alias: 'commentCriticality'
+    class: 'App\Models\Miscs\MiscCommentCriticality'
+  - &expertiseSubject
+    alias: 'expertiseSubject'
+    class: 'App\Models\Miscs\MiscExpertiseSubject'
+  - &financingSource
+    alias: 'financingSource'
+    class: 'App\Models\Miscs\MiscFinancingSource'
+  - &legalBasis
+    alias: 'legalBasis'
+    class: 'App\Models\Miscs\MiscLegalBasis'
+  - &municipalDistrict
+    alias: 'municipalDistrict'
+    class: 'App\Models\Miscs\MiscMunicipalDistrict'
+  - &regionCode
+    alias: 'regionCode'
+    class: 'App\Models\Miscs\MiscRegionCode'
+  - &legalSubject
+    alias: 'legalSubject'
+    class: 'App\Models\Miscs\MiscLegalSubject'
+  - &eepdNonUseReason
+    alias: 'eepdNonUseReason'
+    class: 'App\Models\Miscs\MiscEepdNonUseReason'
+  - &engineeringSurvey
+    alias: 'engineeringSurvey'
+    class: 'App\Models\Miscs\MiscEngineeringSurvey'
+  - &contractPreparationType
+    alias: 'contractPreparationType'
+    class: 'App\Models\Miscs\MiscContractPreparationType'
+  - &contractType
+    alias: 'contractType'
+    class: 'App\Models\Miscs\MiscContractType'
+
+
+# Зависимые справочники
+# Содержит отношения один ко многим и многие ко многим
+# Один ко многим - сделано для гибкости и убодства использования в коде
+# Многие ко многим - разделение на главный и зависимый условно
+# relation - BelongsToMany
+dependent_miscs:
+  - main:
+      <<: *expertiseForm
+      relation: 'miscExpertisePurposes'
+    sub:
+      <<: *expertisePurpose
+      relation: 'miscExpertiseForms'
+
+  - main:
+      <<: *expertisePurpose
+      relation: 'miscExpertiseSubjects'
+    sub:
+      <<: *expertiseSubject
+      relation: 'miscExpertisePurposes'
+
+  - main:
+      <<: *oksGroup
+      relation: 'miscOksTypeOfObjects'
+    sub:
+      <<: *oksTypeOfObject
+      relation: 'miscOksGroups'
+
+  - main:
+      <<: *nationalProjectName
+      relation: 'miscFederalProjectNames'
+    sub:
+      <<: *federalProjectName
+      relation: 'miscNationalProjectNames'
+
+  - main:
+      <<: *nationalProjectSector
+      relation: 'miscNationalProjectSubsectors'
+    sub:
+      <<: *nationalProjectSubsector
+      relation: 'miscNationalProjectSectors'
+
+  - main:
+      <<: *nationalProjectSubsector
+      relation: 'miscNationalProjectGroups'
+    sub:
+      <<: *nationalProjectGroup
+      relation: 'miscNationalProjectSubsectors'

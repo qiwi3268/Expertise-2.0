@@ -1,0 +1,192 @@
+.form-card {
+
+  $this: &;
+
+  @extend %card;
+  border-left: $blue;
+
+  &:not(:last-child) {
+    margin: 0 0 10px 0;
+  }
+
+  &__header {
+    align-items: center;
+    background-color: #f6f8fa;
+    border-bottom: 1px solid #e0e0e0;
+    cursor: pointer;
+    display: flex;
+    padding: 10px;
+  }
+
+  &__title {
+    display: flex;
+    flex-grow: 1;
+    font-size: 16px;
+    text-transform: uppercase;
+  }
+
+  &__item {
+    padding: 10px 15px;
+  }
+
+  &__subtitle {
+    border-top: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    font-weight: 700;
+
+  }
+
+  &__icon-valid,
+  &__icon-invalid {
+    display: none;
+    font-size: 20px;
+    margin: 0 10px 0 0;
+  }
+
+  &__icon-valid {
+    color: $valid;
+  }
+
+  &__icon-invalid {
+    color: #e28383;
+  }
+
+  &[data-state='valid'] {
+    border-color: $valid;
+
+    #{$this}__icon-valid {
+      display: block;
+    }
+
+    #{$this}__header {
+      background-color: #F6FBF6;
+    }
+  }
+
+  &[data-state='invalid'] {
+    border-color: #e99a9a;
+
+    #{$this}__icon-invalid {
+      display: block;
+    }
+
+    #{$this}__header {
+      background-color: #FDF6F6;
+    }
+  }
+
+  &.closed {
+    #{$this}__header {
+      border-bottom: 0;
+    }
+  }
+
+  &__body.column-form {
+
+    #{$this}__field {
+      margin: 10px;
+    }
+
+    .form-field {
+
+      align-items: center;
+      display: grid;
+      grid-template-columns: 3fr 7fr;
+      grid-column-gap: 20px;
+
+      &__title {
+        text-align: right;
+      }
+
+      &[data-state='invalid'] {
+        .form-field__title {
+          padding: 0 0 14px 0;
+        }
+      }
+
+      &__error {
+        margin: 2px 0 0 0;
+        height: 12px;
+      }
+
+    }
+
+  }
+
+  &__body.grid-form{
+
+    #{$this}__field {
+      margin: 3px 10px;
+    }
+
+    .form-field {
+
+      &__title {
+        margin: 0 0 3px 0;
+      }
+
+      &__bottom {
+        height: 12px;
+        margin: 2px 0 0 0;
+      }
+
+    }
+
+    #{$this}__row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-column-gap: 50px;
+      align-items: flex-end;
+
+      margin: 10px 0 0 0;
+
+      &:last-child {
+        margin: 10px 0 10px 0;
+      }
+    }
+
+    #{$this}__column {
+      display: flex;
+
+      .form-field {
+        width: 50%;
+      }
+
+    }
+
+    #{$this}__tep {
+      display: grid;
+      grid-template-columns: 5fr 3fr;
+      align-items: flex-end;
+
+      #{$this}__field {
+
+        &:first-child {
+          margin: 3px 0 3px 10px;
+        }
+
+        &:last-child {
+          margin: 3px 10px 3px 5px;
+        }
+      }
+    }
+  }
+
+  &__message {
+
+    align-items: center;
+    display: flex;
+    margin: 15px 10px;
+
+    #{$this}__icon-message {
+      color: $error;
+      font-size: 22px;
+      margin: 0 10px 0 10px;
+    }
+
+  }
+
+}

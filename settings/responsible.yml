@@ -1,0 +1,16 @@
+# document_type название типа документа в системе
+#   type_1
+#     model полное название класса модели
+#   type_2
+#     model полное название класса модели
+#   type_3
+#     model полное название класса модели
+
+
+application:
+  type_1:
+    model: ~
+  type_2:
+    model: 'App\Models\Responsible\Type2\RespApplicationType2'
+  type_3:
+    model: ~

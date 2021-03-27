@@ -1,0 +1,42 @@
+.footer {
+  align-items: center;
+  background-color: $dark-blue;
+  border-bottom: 3px solid $yellow;
+  border-radius: 4px 4px 0 0;
+  //display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  min-height: 50px;
+  justify-items: center;
+  padding: 0 30px;
+
+  &__item {
+    color: #ffd354;
+    cursor: pointer;
+    transition: 0.15s;
+
+    &:hover {
+      color: #fff;
+    }
+
+    &:first-child {
+      justify-self: flex-start;
+    }
+
+    &:last-child {
+      justify-self: flex-end;
+    }
+
+  }
+
+  &__icon {
+    font-size: 16px;
+  }
+
+  &__text {
+    margin: 0 0 0 12px;
+  }
+
+
+}
+

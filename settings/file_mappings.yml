@@ -1,0 +1,27 @@
+# После того, как будет построена структура таблиц нужно решить:
+# 1 - document хранить на уровне file_table или общем
+# 2 - uploader хранить на уровне file_table или общем
+
+
+
+1: # процесс экспертизы
+
+  1: # анкета
+    1:
+      document: 'application'
+      uploader: 'App\ApiServices\FileUploading\Expertise\Type1'
+
+
+    2:
+      document: 'application'
+      uploader: ~
+
+
+  2: # документация
+    1: # производственные/непроизводственные
+      document: 'application'
+      uploader: 'App\ApiServices\FileUploading\Expertise\TypeDocumentation'
+    2: # линейные
+      document: 'application'
+      uploader: 'App\ApiServices\FileUploading\Expertise\TypeDocumentation'
+# 2 - процесс ...

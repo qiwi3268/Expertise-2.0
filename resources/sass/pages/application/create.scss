@@ -1,0 +1,59 @@
+@import 'resources/sass/general/main';
+@import 'resources/sass/general/elements';
+@import 'resources/sass/modals/modal';
+@import 'resources/sass/modals/misc';
+@import 'resources/sass/modals/calendar';
+@import 'resources/sass/modals/file-uploader';
+@import 'resources/sass/modals/sign';
+@import 'resources/sass/modals/confirmation';
+@import 'resources/sass/forms/form-card';
+@import 'resources/sass/forms/forms';
+@import 'resources/sass/forms/template-block';
+@import 'resources/sass/forms/radio';
+@import 'resources/sass/forms/form-sidebar';
+@import 'resources/sass/forms/files';
+@import 'resources/sass/forms/documentation';
+
+.application-form {
+  align-items: flex-start;
+  display: flex;
+
+  &__sidebar {
+    position: sticky;
+    top: 10px;
+    margin: 0 10px 0 0;
+    min-width: 300px;
+    width: 300px;
+  }
+
+  &__cards {
+    flex-grow: 1;
+  }
+
+  &__card {
+    border-left: 4px solid $blue;
+  }
+
+}
+
+.sub-header {
+  @extend %card;
+  margin: 0 0 10px 0;
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  justify-content: space-between;
+
+  &__title {
+    font-weight: 700;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 20px;
+  }
+
+  &__action {
+    width: 130px;
+  }
+}
+
+
+

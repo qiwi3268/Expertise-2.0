@@ -1,0 +1,45 @@
+
+.error-modal {
+  max-width: 500px;
+
+  &[data-opened='true'] {
+    z-index: 100;
+  }
+
+  &__header {
+    border-bottom: 1px solid $grey;
+    padding: 10px 15px;
+  }
+
+  &__icon {
+    color: $error;
+    font-size: 24px;
+    margin: 0 5px 0 0;
+  }
+
+  &__title {
+    font-size: 18px;
+    font-weight: 700;
+  }
+
+  &__messages {
+    padding: 10px 15px;
+  }
+
+  &__message {
+
+    &:not(&:last-child) {
+      margin: 0 0 5px 0;
+    }
+
+  }
+
+  &__code {
+    padding: 0 15px 10px;
+  }
+
+}
+
+.error-overlay[data-opened='true'] {
+  z-index: 90;
+}

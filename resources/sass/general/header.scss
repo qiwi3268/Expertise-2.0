@@ -1,0 +1,89 @@
+
+.header {
+  align-items: center;
+  background-color: #1c3959;
+  border-radius: 0 0 4px 4px;
+  box-shadow: 2px 0 5px rgb(0 0 0 / 22%);
+  color: #ffd354;
+  display: grid;
+  grid-template-columns: 8fr 12fr 10fr 1fr;
+  margin: 0 0 10px 0;
+  overflow: hidden;
+  white-space: nowrap;
+
+  $this: &;
+
+  &__logo {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    padding: 0 15px;
+    justify-self: flex-start;
+  }
+
+  &__img {
+    max-height: 61px;
+    padding: 0 10px 0 0;
+  }
+
+  &__logo-title {
+    font-size: 20px;
+    line-height: 20px;
+  }
+
+  &__link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    margin: 0 15px;
+    cursor: pointer;
+
+    &:hover {
+      #{$this}__icon,
+      #{$this}__action-label {
+        color: #fff;
+      }
+    }
+  }
+
+  &__action-label {
+    color: $yellow;
+    font-size: 12px;
+    transition: .15s;
+  }
+
+  &__user {
+    font-size: 20px;
+    cursor: default;
+    text-align: end;
+  }
+
+  &__actions {
+    cursor: default;
+    display: flex;
+  }
+
+  &__icon {
+    color: $yellow;
+    cursor: pointer;
+    font-size: 22px;
+    padding: 5px;
+    transition: color 0.15s;
+
+    &:hover {
+      color: #fff;
+    }
+  }
+
+  &__logout {
+    justify-self: flex-end;
+    margin: 0 5px;
+  }
+
+
+}
+
+
+
+

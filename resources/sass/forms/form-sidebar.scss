@@ -1,0 +1,78 @@
+
+.form-sidebar {
+  @extend %card;
+
+  $this: &;
+
+  &__row {
+    border-left: 4px solid #fff;
+    padding: 7px 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &[data-selected='true'] {
+      background-color: $background;
+      border-color: $yellow;
+    }
+
+    &[data-state='valid'] {
+      border-color: #ECF7ED;
+      background-color: #ECF7ED;
+
+      #{$this}__icon-valid {
+        display: block;
+        color: $valid;
+      }
+
+      &[data-selected='true'] {
+        background-color: #E5F2E6;
+        border-color: $valid;
+      }
+
+    }
+
+    &[data-state='inProcess'] {
+      border-color: #F1F6F9;
+      background-color: #F1F6F9;
+
+      #{$this}__icon-process {
+        display: block;
+        color: $icon-blue;
+      }
+
+      &[data-selected='true'] {
+        background-color: #E6EDF2;
+        border-color: $blue;
+      }
+
+    }
+
+    &[data-state='invalid'] {
+      border-color: #D76868;
+      background-color: #FDF7F7;
+
+      #{$this}__icon-invalid {
+        display: block;
+        color: #bd4949;
+      }
+
+      &[data-selected='true'] {
+        background-color: #F8F0F0;
+        border-color: #C65C5C;
+      }
+
+    }
+
+  }
+
+  &__icon-process,
+  &__icon-valid,
+  &__icon-invalid {
+    display: none;
+    font-size: 18px;
+    margin: 0 0 0 8px;
+  }
+
+}

@@ -1,0 +1,119 @@
+
+.template-block {
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+
+  &__add {
+    margin: 10px;
+    padding: 10px;
+
+    .form-button__name {
+      color: #1c3959;
+    }
+  }
+
+  &__name {
+    margin: 0 10px 0 0;
+  }
+
+  &__values {
+    width: 30%;
+  }
+
+  &__form {
+    width: 70%;
+  }
+
+  &__body {
+    //margin: 10px;
+    width: 100%;
+  }
+
+}
+
+.template-part {
+
+  $this: &;
+
+  display: flex;
+  flex-direction: column;
+
+  &__form {
+    border: 1px solid $border;
+    border-radius: 4px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+
+    &:last-child {
+      margin: 10px 10px 0 10px;
+    }
+
+  }
+
+  &__header {
+    background-color: #f6f8fa;
+    border-bottom: 1px solid $border;
+    padding: 10px 15px;
+  }
+
+  &__body {
+    padding: 10px 0;
+    border-bottom: 1px solid $border;
+  }
+
+  &__actions {
+
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    background-color: #f6f8fa;
+
+    .form-button {
+      width: 280px;
+      background-color: #fff;
+
+      &:not(:last-child) {
+        margin: 0 10px 0 0;
+      }
+    }
+
+  }
+
+
+  &__row {
+    display: flex;
+    align-items: center;
+    margin: 0 10px 10px;
+
+    .form-button {
+      padding: 8px 10px;
+      margin: 0 3px 0 0;
+    }
+
+  }
+
+  &__delete {
+    @extend %icon-clear;
+  }
+
+  .form-button {
+    padding: 10px;
+
+    &__name {
+      color: #1c3959;
+    }
+
+  }
+
+
+}
+
+
+
+
+

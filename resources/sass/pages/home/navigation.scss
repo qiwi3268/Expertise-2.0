@@ -1,0 +1,399 @@
+@import 'resources/sass/general/main';
+@import 'resources/sass/general/elements';
+
+.sub-header {
+
+  margin: 0 0 10px 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  height: 60px;
+
+  $this: &;
+
+  &__block {
+    @extend %card;
+
+    //align-items: center;
+    //display: grid;
+    //height: 70px;
+    //grid-template-columns: 4fr 1fr;
+    //padding: 10px 20px;
+
+    align-items: center;
+    padding: 0 15px;
+    display: flex;
+    cursor: pointer;
+    transition: .1s;
+
+    &:not(&:first-child) {
+      margin: 0 0 0 10px;
+    }
+
+  }
+
+  &__details {
+    margin: 0 10px 0 0;
+  }
+
+  &__counter {
+    font-size: 40px;
+    font-family: "Bebas Neue", sans-serif;
+  }
+
+  &__label {
+    font-size: 18px;
+    font-weight: 700;
+    padding: 0 15px 0 0;
+    flex-grow: 1;
+  }
+
+  &__circle {
+    width: 40px;
+    height: 40px;
+    border: 3px solid #4A9383;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &.green {
+      border: 3px solid #4A9383;
+
+      #{$this}__icon {
+        color: #4A9383;
+      }
+    }
+
+    &.red {
+
+      border: 3px solid #AF6A6A;
+
+      #{$this}__icon {
+        color: #AF6A6A;
+      }
+    }
+
+    &.yellow {
+
+      //border: 3px solid #7E5F70;
+      border: 3px solid #5F787E;
+
+      #{$this}__icon {
+        //color: #7E5F70;
+        color: #5F787E;
+      }
+
+    }
+
+    &.test {
+
+      border: 3px solid #7E6E5F;
+
+      #{$this}__icon {
+        color: #7E6E5F;
+      }
+
+    }
+
+  }
+
+  &__icon {
+    color: #667F9D;
+    font-size: 21px;
+  }
+
+}
+
+.navigation {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  //grid-column-gap: 10px;
+
+  &__sidebar {
+    //margin: 0 10px 0 0;
+  }
+
+  &__content {
+    //@extend %card;
+    //padding: 10px;
+    margin: 0 0 0 10px;
+
+  }
+
+  &__search {
+    //@extend %card;
+
+    border-radius: 25px;
+    margin: 0 0 10px 0;
+
+    .search {
+
+      &__body {
+        @extend %card;
+        border-radius: 25px 4px 4px 25px;
+        //border-radius: 25px
+        margin: 0 5px 0 0;
+
+        border: 2px solid #fff;
+        transition: border-color, .1s;
+
+        &:hover {
+          //border: 2px solid #667F9D;
+          border-color: #667F9D;
+          box-shadow: none;
+        }
+      }
+
+      &__button {
+        @extend %card;
+
+        border-radius: 4px 25px 25px 4px;
+
+        cursor: pointer;
+        //background-color: $background;
+        display: flex;
+        align-items: center;
+        font-size: 18px;
+        //border-left: 1px solid $border;
+
+        //padding: 0 25px 3px;
+        //padding: 0 25px;
+
+        padding: 0 25px 0 20px;
+        transition: .1s;
+
+        &:hover {
+          //border-bottom: 3px solid $blue;
+
+          background-color: #667F9D;
+          color: #fff;
+          //padding: 0 25px;
+
+        }
+      }
+
+    }
+  }
+
+}
+
+.navigation-table {
+  @extend %card;
+
+  $this: &;
+
+  &__nav {
+   /* border-bottom: 2px solid #93b0d1;
+    font-size: 14px;
+    display: flex;*/
+
+    //border-bottom: 2px solid $blue;
+    border-bottom: 2px solid #667F9D;
+
+    font-size: 14px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 4fr;
+    /* padding: 12px 5px 12px 15px; */
+    height: 40px;
+    padding: 0 15px 0 5px;
+  }
+
+  &__size {
+    display: flex;
+    align-items: center;
+  }
+
+  &__amount {
+    cursor: pointer;
+    padding: 12px 15px;
+
+    transition: .1s;
+
+    &:hover {
+      background-color: #667F9D;
+      color: #fff;
+    }
+
+  }
+
+  &__sort {
+    display: flex;
+    align-items: center;
+  }
+
+  &__category {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 12px 15px;
+
+    transition: .1s;
+    &:hover {
+      background-color: #667F9D;
+      color: #fff;
+
+      #{$this}__sort-icon {
+        color: #fff;
+      }
+
+    }
+
+  }
+
+  &__category-label {
+    margin: 0 5px 0 0;
+  }
+
+  &__sort-icon {
+
+    transition: .1s;
+    font-size: 16px;
+    color: $icon-blue;
+  }
+
+  &__footer {
+    border-top: 2px solid #667F9D;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    padding: 0 5px 0 5px;
+
+  }
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+
+  &__arrow {
+    cursor: pointer;
+    padding: 10px 10px;
+    color: $icon-blue;
+  }
+
+}
+
+
+.view-sidebar {
+  //min-width: 200px;
+
+  &__block {
+    @extend %card;
+
+    &:not(&:last-child) {
+      margin: 0 0 10px 0;
+    }
+  }
+
+  &__title {
+    //border-bottom: 2px solid #ffd354;
+    //border-bottom: 2px solid #93b0d1;
+    border-bottom: 2px solid $yellow;
+    //border-bottom: 2px solid #667F9D;
+
+    font-size: 18px;
+    padding: 8px 15px;
+    text-align: center;
+    cursor: default;
+  }
+
+  &__row {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 15px;
+    transition: .1s;
+
+    &:hover {
+      background-color: $background;
+    }
+
+  }
+
+  &__label {
+    margin: 0 8px 0 0;
+  }
+
+  &__counter {
+    word-break: normal;
+    font-size: 18px;
+  }
+
+
+}
+
+
+
+
+table {
+  //@extend %card;
+
+  width: 100%;
+  background-color: #fff;
+  border-collapse: collapse;
+}
+
+table {
+  color: $text;
+}
+
+tr:nth-child(odd) {
+  background-color: #f8f8f8;
+}
+
+tr {
+  cursor: pointer;
+  transition: .05s;
+}
+
+tr:hover {
+  background-color: #EFF3F8;
+}
+
+td,
+th {
+  border: 1px solid $border;
+  padding: 10px 15px;
+}
+tr:first-child td,
+tr:first-child th{
+  border-top: 0;
+}
+
+tr td:first-child,
+tr th:first-child {
+  border-left: 0;
+}
+
+tr:last-child td,
+tr:last-child th {
+  border-bottom: 0;
+}
+
+tr td:last-child,
+tr th:last-child {
+  border-right: 0;
+}
+
+
+
+.test-row {
+  height: 50px;
+
+  &:hover {
+    background-color: greenyellow;
+  }
+}
+
+.test-flex {
+  display: flex;
+}
+
+
+
+
+
+
+
+

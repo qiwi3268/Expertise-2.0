@@ -1,0 +1,14 @@
+# Предназначен для хранения настроек, связанных с документами
+
+application:
+  model: 'App\Models\Docs\DocApplication'
+  repository: 'App\Repositories\Docs\DocApplicationRepository'
+total_cc:
+  model: 'App\Models\Docs\DocTotalCCTEST'
+  repository: 'App\Repositories\Docs\DocTotalCCTEST'
+section:
+  model: 'App\Models\Docs\DocSectionTEST'
+  repository: 'App\Repositories\Docs\DocSectionTEST'
+comment:
+  model: 'App\Models\Docs\DocCommentTEST'
+  repository: 'App\Repositories\Docs\DocCommentTEST'

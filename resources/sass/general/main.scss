@@ -1,0 +1,166 @@
+@import '~@fortawesome/fontawesome-free/scss/fontawesome';
+@import '~@fortawesome/fontawesome-free/scss/regular';
+@import '~@fortawesome/fontawesome-free/scss/solid';
+@import '~@fortawesome/fontawesome-free/scss/brands';
+
+@import 'resources/sass/general/null';
+@import 'resources/sass/general/colors';
+@import 'resources/sass/general/header';
+@import 'resources/sass/general/footer';
+
+@font-face {
+  font-family: 'Bebas Neue';
+  src: url('../../fonts/BebasNeue Bold.ttf');
+}
+
+@font-face {
+  font-family: 'Roboto Condensed';
+  src: url('../../fonts/RobotoCondensed-Regular.ttf');
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background-color: $background;
+}
+
+button {
+  background-color: #fff;
+}
+
+a {
+  color: $text;
+}
+
+input {
+  font-family: 'Roboto Condensed', sans-serif;
+  color: $text;
+  font-size: 14px;
+  padding: 10px 12px;
+}
+
+textarea {
+  font-family: 'Roboto Condensed', sans-serif;
+  color: $text;
+  font-size: 14px;
+  resize: vertical;
+  padding: 8px;
+}
+
+.main-container {
+  color: $text;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Roboto Condensed', sans-serif;
+  margin: 0 auto;
+  max-width: 1655px;
+  min-height: 100%;
+  min-width: 1024px;
+  word-break: break-word;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  margin: 0 0 10px 0;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #C6C6C6;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #B0B0B0;
+}
+
+[data-card] {
+
+  [data-card='expanded'] [data-card-body] {
+    max-height: none;
+  }
+
+  [data-card-body] {
+    display: none;
+    transition: max-height .3s;
+    overflow: hidden;
+  }
+
+}
+
+/*
+  Указывает, что элемент в данный момент не существует.
+  Такие элементы игнорируются инициализаторами и обработчиками форм
+*/
+[data-displayed='false'],
+/*
+  Указывает, что элемент является шаблоном
+*/
+[data-template='true'],
+/*
+  Указывает, что элемент в данный момент скрыт, но существует.
+  Такие элементы не будут игнорироваться инициализаторами и обработчиками форм
+*/
+[data-hidden='true'] {
+  display: none !important;
+}
+
+
+
+.admin-panel {
+  display: none;
+  margin: 0 0 10px 0;
+  font-family: 'Roboto Condensed', sans-serif;
+  color: $text;
+  background-color: #fff;
+
+  &__header {
+    margin: 0 0 10px 0;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 700;
+  }
+
+  &__body {
+    padding: 10px 15px;
+  }
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,266 @@
+{
+   "singleDisplayDependencies": {
+      "typeOfObject": {
+         "default": {
+            "gpzu": false,
+            "planningDocumentationApproval": false,
+            "cadastralNumber": false,
+            "tepsEmptyObjectType": true,
+            "nonLinearTeps": false,
+            "nonLinearGeneralTeps": false,
+            "nonProductionTeps": false,
+            "productionTeps": false,
+            "linearTeps": false
+         },
+         "1": {
+            "gpzu": true,
+            "planningDocumentationApproval": false,
+            "cadastralNumber": true,
+            "tepsEmptyObjectType": false,
+            "nonLinearTeps": true,
+            "nonLinearGeneralTeps": true,
+            "nonProductionTeps": false,
+            "productionTeps": true,
+            "linearTeps": false
+         },
+         "2": {
+            "gpzu": true,
+            "planningDocumentationApproval": false,
+            "cadastralNumber": true,
+            "tepsEmptyObjectType": false,
+            "nonLinearTeps": true,
+            "nonLinearGeneralTeps": true,
+            "nonProductionTeps": true,
+            "productionTeps": false,
+            "linearTeps": false
+         },
+         "3": {
+            "gpzu": false,
+            "planningDocumentationApproval": true,
+            "cadastralNumber": false,
+            "tepsEmptyObjectType": false,
+            "nonLinearTeps": false,
+            "nonLinearGeneralTeps": false,
+            "nonProductionTeps": false,
+            "productionTeps": false,
+            "linearTeps": true
+         }
+      },
+      "isCulturalObject": {
+         "default": {
+            "culturalObjectDetails": false
+         },
+         "1": {
+            "culturalObjectDetails": true
+         },
+         "-1": {
+            "culturalObjectDetails": false
+         }
+      },
+      "isNationalProject": {
+         "default": {
+            "nationalProjectDetails": false
+         },
+         "1": {
+            "nationalProjectDetails": true
+         },
+         "-1": {
+            "nationalProjectDetails": false
+         }
+      },
+      "isEepdUse": {
+         "default": {
+            "eepdUseInfo": false,
+            "eepdNonUse": false
+         },
+         "1": {
+            "eepdUseInfo": true,
+            "eepdNonUse": false
+         },
+         "-1": {
+            "eepdUseInfo": false,
+            "eepdNonUse": true
+         }
+      },
+      "financingSource": {
+         "default": {
+            "budget": false,
+            "organization": false,
+            "other": false
+         },
+         "1": {
+            "budget": true,
+            "organization": false,
+            "other": false
+         },
+         "2": {
+            "budget": false,
+            "organization": true,
+            "other": false
+         },
+         "3": {
+            "budget": false,
+            "organization": false,
+            "other": true
+         }
+      },
+      "legalSubject": {
+         "default": {
+            "organization": false,
+            "person": false,
+            "entrepreneur": false,
+            "extractsTmp": false
+         },
+         "1": {
+            "organization": true,
+            "person": false,
+            "entrepreneur": false,
+            "extractsTmp": true
+         },
+         "2": {
+            "organization": false,
+            "person": true,
+            "entrepreneur": false,
+            "extractsTmp": true
+
+         },
+         "3": {
+            "organization": false,
+            "person": false,
+            "entrepreneur": true,
+            "extractsTmp": true
+
+         }
+      },
+      "isSignerEqualsDirector": {
+         "default": {
+            "signerDetails": true
+         },
+         "-1": {
+            "signerDetails": true
+         },
+         "1": {
+            "signerDetails": false
+         }
+      },
+      "isLegalBasisIssuerEqualsDirector": {
+         "default": {
+            "legalBasisIssuerDetails": true
+         },
+         "-1": {
+            "legalBasisIssuerDetails": true
+         },
+         "1": {
+            "legalBasisIssuerDetails": false
+         }
+      },
+      "isRequiredExtract": {
+         "default": {
+            "extractDetails": false,
+            "notRequiredSroReason": false,
+            "registerExtracts": false
+         },
+         "-1": {
+            "extractDetails": false,
+            "notRequiredSroReason": true,
+            "registerExtracts": false
+         },
+         "1": {
+            "extractDetails": true,
+            "notRequiredSroReason": false,
+            "registerExtracts": true
+         }
+      }
+   },
+   "multipleDisplayDependencies": {
+      "expertiseSubject": {
+         "default": {
+            "naturalConditions": false
+         },
+         "rules": {
+            "INCLUDE_ANY:1#2": {
+               "naturalConditions": true
+            },
+            "EXCLUDE_ALL:1#2": {
+               "naturalConditions": false
+            }
+         }
+      },
+      "typeOfWork": {
+         "default": {
+            "budgetInvestmentFile": false,
+            "informationLetterFile": true
+         },
+         "rules": {
+            "INCLUDE_ANY:1#2": {
+               "budgetInvestmentFile": true,
+               "informationLetterFile": false
+            },
+            "EXCLUDE_ALL:1#2": {
+               "budgetInvestmentFile": false,
+               "informationLetterFile": true
+            }
+         }
+      },
+      "oksGroup": {
+         "default": {
+            "tepsEmptyOksGroup": true,
+            "nonResidentialTeps": false,
+            "residentialTeps": false
+         },
+         "rules": {
+            "INCLUDE_ANY:465#482#483": {
+               "tepsEmptyOksGroup": false,
+               "nonResidentialTeps": false,
+               "residentialTeps": true
+            },
+            "EXCLUDE_ALL:465#482#483": {
+               "tepsEmptyOksGroup": false,
+               "nonResidentialTeps": true,
+               "residentialTeps": false
+            }
+         }
+      },
+      "legalBasis": {
+         "default": {
+            "legalBasisDetails": false
+         },
+         "rules": {
+            "INCLUDE_ANY:1": {
+               "legalBasisDetails": true
+            },
+            "EXCLUDE_ALL:1": {
+               "legalBasisDetails": false
+            }
+         }
+      }
+   },
+   "multipleRequireDependencies": {
+      "expertiseSubject": {
+         "default": {
+            "estimateCost": false
+         },
+         "rules": {
+            "INCLUDE_ANY:3": {
+               "estimateCost": true
+            },
+            "EXCLUDE_ALL:3": {
+               "estimateCost": false
+            }
+         }
+      },
+      "typeOfWork": {
+         "default": {
+            "isEepdUse": false
+         },
+         "rules": {
+            "INCLUDE_ANY:3": {
+               "isEepdUse": true
+            },
+            "EXCLUDE_ALL:3": {
+               "isEepdUse": false
+            }
+         }
+      }
+   }
+}

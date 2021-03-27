@@ -1,0 +1,91 @@
+
+.file-modal {
+  height: 550px;
+  width: 700px;
+  display: flex;
+  flex-direction: column;
+
+  &__drop-area {
+    border: 1px solid #fff;
+    flex-grow: 1;
+    margin: 3px;
+    padding: 2px 2px 0 0;
+
+    &[data-state='active'] {
+      border: 1px dashed $text;
+      border-radius: 3px;
+    }
+  }
+
+  &__header {
+    align-items: center;
+    border-bottom: 2px solid $yellow;
+    cursor: default;
+    display: flex;
+    font-size: 18px;
+    height: 40px;
+    position: relative;
+  }
+
+  &__title {
+    margin: 0 0 0 10px;
+  }
+
+  &__progress-bar {
+    background-color: #ffe69d;
+    height: 40px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    transition: .15s;
+    width: 0;
+    z-index: -1;
+  }
+
+  &__body {
+    flex-grow: 1;
+    max-height: 440px;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  &__item {
+    align-items: center;
+    border-radius: 4px;
+    cursor: default;
+    display: flex;
+    margin: 0 6px;
+    padding: 6px 0 6px 10px;
+    transition: .15s;
+
+    &:hover {
+      background-color: $background;
+    }
+  }
+
+  &__icon {
+    color: $dark-blue;
+    cursor: pointer;
+    font-size: 20px;
+    margin: 0 10px 0 0;
+  }
+
+  &__size {
+    color: #6e6e6e;
+    font-size: 14px;
+  }
+
+  &__actions {
+    border-top: 2px solid $yellow;
+  }
+
+  & ::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  & ::-webkit-scrollbar-track,
+  & ::-webkit-scrollbar-thumb {
+    border-radius: 3px;
+  }
+
+}

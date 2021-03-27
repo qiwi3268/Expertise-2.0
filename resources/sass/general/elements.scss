@@ -1,0 +1,151 @@
+%card {
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 1px 0 3px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+}
+
+%invalid-field {
+
+  &.invalid {
+    border-color: $invalid;
+    color: $error;
+
+    &:hover,
+    &:focus {
+      box-shadow: 0 0 0 3px $shadow-red;
+    }
+  }
+
+}
+
+%icon-clear {
+  border: #fff solid 2px;
+  border-radius: 4px;
+  color: $remove;
+  cursor: pointer;
+  padding: 8px;
+  transition: .15s;
+
+  &:hover {
+    background-color: $shadow-red;
+    border-color: $shadow-red;
+    color: $remove;
+  }
+}
+
+%field {
+  align-items: center;
+  border: 1px solid $grey;
+  border-radius: 4px;
+  color: #6e6e6e;
+  cursor: pointer;
+  display: flex;
+  flex-grow: 1;
+  font-size: 14px;
+  transition: box-shadow .10s;
+
+  overflow: hidden;
+
+  &:hover {
+    border-color: $active-blue;
+    box-shadow: 0 0 0 3px $shadow-blue;
+  }
+}
+
+.form-button {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  justify-content: space-between;
+  text-align: center;
+  transition: .10s;
+
+  &:hover {
+    border-color: $active-blue;
+    box-shadow: 0 0 0 3px #bfdeff;
+  }
+
+  &__icon {
+    color: $icon-blue;
+    margin: 0 0 0 10px;
+  }
+
+  &.save &__icon {
+    color: $valid;
+  }
+
+  &.remove &__icon {
+    color: $remove;
+  }
+
+}
+
+.action-button {
+  align-items: center;
+  background-color: #5181b8;
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  font-size: 14px;
+  justify-content: space-between;
+  transition: background-color .15s;
+
+  padding: 10px;
+
+  &:hover {
+    background-color: #4574aa;
+  }
+}
+
+.form-input {
+  border: 1px solid $grey;
+  border-radius: 4px;
+  transition: box-shadow .10s;
+
+  @at-root {
+    textarea#{&} {
+      min-height: 60px;
+    }
+  }
+
+  &:focus,
+  &:hover {
+    border-color: $active-blue;
+    box-shadow: 0 0 0 3px $shadow-blue;
+  }
+
+}
+
+.search {
+  height: 50px;
+  //padding: 10px 15px;
+  display: flex;
+  //align-items: center;
+
+  &__body {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    padding: 0 15px;
+
+  }
+
+  &__icon {
+    margin: 0 5px 0 0;
+    color: $icon-blue;
+    font-size: 18px;
+  }
+
+  &__input {
+    padding: 5px;
+    font-size: 16px;
+    flex-grow: 1;
+  }
+
+
+}

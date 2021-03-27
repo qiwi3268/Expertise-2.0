@@ -1,0 +1,53 @@
+
+.documentation {
+
+  &__node {
+    display: flex;
+    flex-direction: column;
+
+    &:not(&:last-child) {
+      border-bottom: 1px solid $border;
+    }
+  }
+
+  &__header {
+
+    display: flex;
+
+    &[data-title='true'] {
+      background-color: #f3f5f6;
+    }
+
+  }
+
+  &__name {
+    flex-grow: 1;
+    padding: 13px 7px 13px 0;
+  }
+
+  &__icon {
+    align-items: center;
+    border-left: 1px solid #e0e0e0;
+    cursor: pointer;
+    display: flex;
+    padding: 13px 15px;
+    transition: .1s;
+
+    &:hover {
+      background-color: $background;
+    }
+  }
+
+  &__files {
+
+    .files__item{
+      padding: 2px 10px 2px 0;
+
+      &:first-child {
+        border-top: 1px solid $border;
+      }
+    }
+
+  }
+
+}

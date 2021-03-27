@@ -1,0 +1,42 @@
+sorting:
+  - block_name: 'block_1'
+    view_name: 'view_1'
+    columns:
+      - column: 'id'
+        description: 'Идентификатор объекта'
+      -
+
+
+
+# Для каждой роли должно быть определено представление по умолчанию
+# block['name'] должны быть уникальны во всём файле настроек
+#  view['name'] должны быть уникальны внутри block
+blocks:
+  - name: 'block_1'
+    label: 'Мои работы'
+    roles: ['ADM', 'BOSS']
+    views:
+
+      - name: 'view_1'
+        label: 'Мои заявления'
+        class: 'class_1'
+        default_roles: ['ADM', 'BOSS']
+
+      - name: 'view_2'
+        label: 'Мои заявления'
+        class: 'class_1'
+        default_roles: ~
+
+  - name: 'block_2'
+    label: 'Мои работы другие'
+    roles: ['ADM', 'BOSS']
+    views:
+      - name:  'view_1'
+        label: 'Мои заявления'
+        class: 'class_1'
+        default_roles: ['ADM', 'BOSS']
+
+      - name: 'view_2'
+        label: 'Мои заявления но другие'
+        class: 'class_1'
+        default_roles: ['ADM', 'BOSS']

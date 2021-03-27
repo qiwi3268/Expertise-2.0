@@ -1,0 +1,126 @@
+
+.calendar {
+  background-color: #fff;
+  border-radius: 3px;
+  box-shadow: 0 3px 10px -.5px rgba(0, 0, 0, .2);
+  max-width: 250px;
+  opacity: 0;
+  padding: 10px;
+  position: fixed;
+  visibility: hidden;
+  width: 100%;
+  z-index: -1;
+
+  &[data-opened='true'] {
+    z-index: 20;
+    opacity: 1;
+    visibility: visible;
+    position: absolute;
+  }
+
+  &__nav {
+    align-items: center;
+    display: flex;
+    margin: 0 0 10px 0;
+  }
+
+  &__arrow {
+    border-radius: 3px;
+    cursor: pointer;
+    padding: 5px 8px;
+
+    &:hover {
+      background-color: $grey;
+    }
+  }
+
+  &__selected-label {
+    border-radius: 3px;
+    cursor: pointer;
+    flex-grow: 1;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 5px 0;
+    text-align: center;
+    transition: 0.1s;
+
+    &:hover {
+      background-color: $grey;
+    }
+  }
+
+  &__title {
+    cursor: default;
+    display: flex;
+    font-weight: 700;
+    justify-content: space-between;
+    margin: 0 0 10px 0;
+
+    &.hidden {
+      display: none;
+    }
+  }
+
+  &__week-day {
+    flex-basis: 14.2%;
+    text-align: center;
+  }
+
+  &__row {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__item {
+    border-radius: 3px;
+    cursor: pointer;
+    text-align: center;
+
+    &[data-type='day'] {
+      flex-basis: 14.2%;
+      padding: 5px 0;
+    }
+
+    &[data-type='month'],
+    &[data-type='year'] {
+      flex-basis: 25%;
+      padding: 10px 0;
+    }
+
+    &.next,
+    &.previous {
+      color: #c3c3c3;
+    }
+
+    &:hover {
+      background-color: $grey;
+      color: $text;
+    }
+
+    &.selected {
+      background-color: $shadow-blue;
+
+      &:hover {
+        background-color: #B5D1EF;
+      }
+    }
+  }
+
+}
+
+.calendar-overlay {
+  height: 100%;
+  left: 0;
+  opacity: 0;
+  position: fixed;
+  top: 0;
+  visibility: hidden;
+  width: 100%;
+  z-index: -1;
+
+  &[data-opened='true'] {
+    z-index: 10;
+    opacity: 1;
+    visibility: visible;
+  }
+}

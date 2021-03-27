@@ -1,0 +1,31 @@
+.radio {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-size: 14px;
+
+  $this: &;
+
+  &__text {
+    font-size: 14px;
+  }
+
+  &__item {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+  }
+
+  &__icon {
+    font-size: 20px;
+    margin: 0 5px 0 0;
+  }
+
+  &.inline {
+    flex-direction: row;
+
+    #{$this}__item {
+      margin: 0 10px 0 0;
+    }
+  }
+}

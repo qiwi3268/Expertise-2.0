@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "module": "esnext",
+    "target": "esnext",
+    "strict": true,
+    //    "importHelpers": true,
+    //    "esModuleInterop": true,
+
+    // Для дебага
+    "sourceMap": true,
+    //-- Для дебага
+
+    "strictPropertyInitialization": false,
+    "moduleResolution": "node",
+
+    // Для js либ
+    "allowJs": true,
+    //-- Для js либ
+
+    // Для импорта json
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    //-- Для импорта json
+
+  },
+  "exclude": [
+    "node_modules"
+  ]
+}
